@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YiBiTe Teknologi Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        background: url("https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1400&q=80")
+          repeat;
+        background-size: cover;
+        animation: scrollBg 60s linear infinite;
+      }
+      @keyframes scrollBg {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 0 1000px;
+        }
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-black bg-opacity-90 text-white">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 w-full bg-black/70 backdrop-blur-lg z-50 shadow-md transition-all duration-300"
+      x-data="{ open: false, scrolled: false }"
+      x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 10)"
+      :class="{ 'backdrop-blur-md shadow-lg': scrolled }"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="img/yy02.jpg"
+            alt="Logo YiBiTe"
+            class="h-10 md:h-12 w-auto rounded-lg shadow-sm"
+          />
+          <h1 class="text-xl font-bold text-white tracking-wide">YiBiTe</h1>
+        </div>
+        <nav class="hidden md:flex gap-6 text-sm font-medium">
+          <a href="#tentang" class="hover:text-red-500 transition">Tentang</a>
+          <a href="#support" class="hover:text-red-500 transition">Support</a>
+          <a href="#proses" class="hover:text-red-500 transition">Proses</a>
+          <a href="#layanan" class="hover:text-red-500 transition">Layanan</a>
+          <a href="#culture" class="hover:text-red-500 transition">Culture</a>
+          <a href="#tim" class="hover:text-red-500 transition">Tim</a>
+          <a href="#klien" class="hover:text-red-500 transition">Klien</a>
+          <a href="#sosmed" class="hover:text-red-500 transition"
+            >Sosial Media</a
+          >
+        </nav>
+        <button
+          @click="open = !open"
+          class="md:hidden text-white text-2xl focus:outline-none"
+          aria-label="Menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      <nav
+        x-show="open"
+        @click.outside="open = false"
+        x-transition
+        class="md:hidden px-6 pb-4 flex flex-col gap-4 text-sm font-medium bg-black/90 text-white"
+      >
+        <a href="#tentang" @click="open = false" class="hover:text-red-500"
+          >Tentang</a
+        >
+        <a href="#support" @click="open = false" class="hover:text-red-500"
+          >Support</a
+        >
+        <a href="#proses" @click="open = false" class="hover:text-red-500"
+          >Proses</a
+        >
+        <a href="#layanan" @click="open = false" class="hover:text-red-500"
+          >Layanan</a
+        >
+        <a href="#culture" @click="open = false" class="hover:text-red-500"
+          >Culture</a
+        >
+        <a href="#tim" @click="open = false" class="hover:text-red-500">Tim</a>
+        <a href="#klien" @click="open = false" class="hover:text-red-500"
+          >Klien</a
+        >
+        <a href="#sosmed" @click="open = false" class="hover:text-red-500"
+          >Sosial Media</a
+        >
+      </nav>
+    </header>
+
+    <!-- Spacer -->
+    <div class="h-[72px]"></div>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="img/yy06.jpeg"
+          alt="Banner"
+          class="w-full h-full object-cover opacity-90"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90"
+        ></div>
+      </div>
+      <div class="relative z-10 mt-36 md:mt-48 animate-fade-in-up">
+        <div class="mb-4">
+          <img
+            src="img/yy07.png"
+            alt="Logo YiBiTe"
+            class="h-32 md:h-40 w-auto mx-auto drop-shadow-lg"
+          />
+        </div>
+        <h1
+          class="text-4xl md:text-6xl font-extrabold mb-4 tracking-wide text-white drop-shadow-sm"
+        >
+          YiBiTe Teknologi Indonesia
+        </h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-300 mb-6">
+          Cinema System Integrator Terpercaya – Solusi Lengkap untuk Industri
+          Bioskop Modern
+        </p>
+        <a
+          href="#tentang"
+          class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-lg shadow-lg transition transform hover:scale-105"
+        >
+          Pelajari Lebih Lanjut
+        </a>
+      </div>
+    </section>
+
+    <!-- Section Utama (Tentang, Support, Proses, Layanan, dll) -->
+    <main class="space-y-24">
+      <section
+        id="tentang"
+        class="px-6 md:px-20 py-16 bg-gray-900 text-gray-200"
+      >
+        <h2 class="text-3xl font-bold mb-6">Tentang Kami</h2>
+        <p class="max-w-3xl text-lg leading-relaxed">
+          Berdiri pada September 2023, YiBiTe Teknologi Indonesia hadir sebagai
+          <strong>cinema system integrator</strong> yang menyediakan layanan
+          menyeluruh untuk bisnis bioskop — dari konsultasi, pengadaan alat,
+          hingga distribusi konten dan pengelolaan operasional.
+        </p>
+      </section>
+
+      <section id="support" class="px-6 md:px-20 py-16 bg-black text-gray-300">
+        <h2 class="text-3xl font-bold mb-6 text-center">Our Support</h2>
+        <ul
+          class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto text-lg list-disc pl-6"
+        >
+          <li>
+            Didukung oleh YiBiTe Technology Co. Ltd, China untuk penjualan &
+            layanan digital cinema equipment.
+          </li>
+          <li>
+            Partner kami bekerjasama dengan GDC, Barco, USHIO, JBL, Feida, dan
+            lainnya.
+          </li>
+          <li>Memberikan solusi lengkap dan efisien untuk proyeksi bioskop.</li>
+          <li>Mengusung konsep “pelayanan profesional, tiada akhir”.</li>
+        </ul>
+      </section>
+
+      <section
+        id="proses"
+        class="px-6 md:px-20 py-16 bg-gray-900 text-gray-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-center">Our Process</h2>
+        <ul
+          class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto text-lg list-disc pl-6"
+        >
+          <li>
+            Fokus pada pembaharuan peralatan, perbaikan, pemeliharaan,
+            modifikasi laser, penjualan peralatan.
+          </li>
+          <li>
+            Sudah hadir di Jakarta dan melayani bioskop seluruh Indonesia.
+          </li>
+          <li>
+            Rencana ekspansi ke kota-kota besar melalui outlet layanan provinsi.
+          </li>
+          <li>Komitmen terhadap standar tertinggi layanan di industri film.</li>
+          <li>Pembersihan jalur optik lengkap: Christie, Barco, NEC.</li>
+          <li>Termasuk pembersihan DMD chip dan sistem pendingin.</li>
+        </ul>
+      </section>
+
+      <section id="layanan" class="px-6 md:px-20 py-16 bg-black text-gray-100">
+        <h2 class="text-3xl font-bold mb-10 text-center">What We Do</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition"
+          >
+            <h3 class="text-xl font-bold mb-2 text-red-400">Konsultan</h3>
+            <p>
+              Kami siap membantu dan berkonsultasi dengan Anda untuk membuka
+              bisnis cinema baru.
+            </p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition"
+          >
+            <h3 class="text-xl font-bold mb-2 text-green-400">
+              Penyedia Peralatan
+            </h3>
+            <p>
+              Menyediakan proyektor, audio, hingga spare part terkecil dengan
+              kualitas terbaik.
+            </p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition"
+          >
+            <h3 class="text-xl font-bold mb-2 text-blue-400">
+              Perbaikan & Pemeliharaan
+            </h3>
+            <p>
+              Layanan profesional untuk memperbaiki dan menjaga alat bioskop
+              Anda tetap optimal.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="culture"
+        class="px-6 md:px-20 py-16 bg-gray-900 text-gray-200"
+      >
+        <h2 class="text-3xl font-bold mb-10 text-center">Our Culture</h2>
+        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto text-lg">
+          <div>
+            <p>
+              <strong>Integritas:</strong> Membangun brand layanan kelas dunia.
+            </p>
+            <p>
+              <strong>Realistik:</strong> Kebenaran sebagai fondasi
+              perkembangan.
+            </p>
+            <p>
+              <strong>Kolaboratif:</strong> Tumbuh bersama pelanggan & mitra.
+            </p>
+          </div>
+          <div>
+            <p>
+              <strong>Inovasi:</strong> Mendukung perkembangan berkelanjutan.
+            </p>
+            <p>
+              <strong>Layanan:</strong> Kepuasan pelanggan dengan pelayanan
+              profesional.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tim" class="px-6 md:px-20 py-16 bg-black text-gray-100">
+        <h2 class="text-3xl font-bold mb-10 text-center">Our Core Members</h2>
+        <div
+          class="flex flex-col md:flex-row justify-center items-center gap-10"
+        >
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-red-400">Mr. Yusuf Sukianto</h3>
+            <p>Direktur</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-blue-400">Mr. Helmi Abdullah</h3>
+            <p>Komisaris</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="klien" class="py-20 bg-gray-900 text-center text-gray-200">
+        <h2 class="text-3xl font-bold mb-10">Our Clients</h2>
+        <div class="flex flex-wrap justify-center items-center gap-10">
+          <div class="flex flex-col items-center">
+            <img
+              src="img/yy09.jpeg"
+              alt="Logo Mopic Cinema"
+              class="h-16 mb-2 rounded-lg"
+            />
+            <span class="text-lg">Mopic Cinema</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <img
+              src="img/yy08.jpg"
+              alt="Logo Cinepolis Indonesia"
+              class="h-16 mb-2 rounded-lg"
+            />
+            <span class="text-lg">Cinepolis Indonesia</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="sosmed" class="py-20 bg-black text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Terhubung dengan Kami
+        </h2>
+        <p class="text-lg text-gray-400 mb-8">
+          Ikuti sosial media kami untuk info terbaru, promosi, dan berita
+          industri cinema.
+        </p>
+        <div class="flex justify-center gap-8 text-2xl font-semibold">
+          <a
+            href="https://www.instagram.com/yibite_teknologiindonesia?igsh=MWd3eXd2NG93MmNxdA=="
+            class="hover:text-red-500 transition"
+            >Instagram</a
+          >
+          <a
+            href="https://www.facebook.com/profile.php?id=61578041856602"
+            class="hover:text-blue-500 transition"
+            >Facebook</a
+          >
+          <a
+            href="https://www.tiktok.com/@yibite_teknologi_?_t=ZS-8xrBTqjbHvE&_r=1"
+            class="hover:text-pink-500 transition"
+            >TikTok</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-6 text-center text-gray-500 text-sm">
+      &copy; 2025 YiBiTe Teknologi Indonesia. All rights reserved.
+    </footer>
+  </body>
+</html>
